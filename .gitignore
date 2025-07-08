@@ -1,0 +1,28 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vsp
+*.pidb
+*.svclog
+
+# ASP.NET
+project.lock.json
+project.fragment.lock.json
+
+# Angular
+node_modules/
+dist/
+tmp/
+*.log
+.angular/cache/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
