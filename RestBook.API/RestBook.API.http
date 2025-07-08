@@ -1,0 +1,6 @@
+@RestBook.API_HostAddress = http://localhost:5076
+
+GET {{RestBook.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
