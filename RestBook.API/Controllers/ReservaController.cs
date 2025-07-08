@@ -5,6 +5,7 @@ using RestBook.Domain.Entities;
 
 namespace RestBook.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ReservaController : ControllerBase
