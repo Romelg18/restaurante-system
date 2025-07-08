@@ -3,9 +3,9 @@ namespace RestBook.Application.DTOs
 {
     public class ReservaDTO
     {
-        public string NombreCliente { get; set; }
+        public string NombreCliente { get; set; } = string.Empty;
         public DateTime FechaReserva { get; set; }
         public int NumeroPersonas { get; set; }
-        public string TelefonoContacto { get; set; }
+        public string TelefonoContacto { get; set; } = string.Empty;
     }
 }
