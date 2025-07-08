@@ -1,4 +1,4 @@
-# Restaurante System 🍽️
+# Restaurante System 
 
 ## Realizado por
 
