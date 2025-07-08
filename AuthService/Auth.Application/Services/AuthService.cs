@@ -10,11 +10,13 @@ namespace Auth.Application.Services
     {
         private readonly IUsuarioRepository _usuarioRepo;
         private readonly PasswordHasher<Usuario> _passwordHasher;
+        private readonly JwtTokenGenerator _tokenGenerator;
 
-        public AuthService(IUsuarioRepository usuarioRepo)
+        public AuthService(IUsuarioRepository usuarioRepo, JwtTokenGenerator tokenGenerator)
         {
             _usuarioRepo = usuarioRepo;
             _passwordHasher = new PasswordHasher<Usuario>();
+            _tokenGenerator = tokenGenerator;
         }
 
         public async Task<string> RegistrarAsync(UsuarioRegisterDTO dto)
@@ -46,11 +48,11 @@ namespace Auth.Application.Services
 
             if (result == PasswordVerificationResult.Success)
             {
-                // Aquí devolveremos un token más adelante
-                return "Login exitoso (JWT pendiente)";
+                return _tokenGenerator.GenerateToken(usuario);
             }
 
             return "Credenciales inválidas.";
         }
+
     }
 }
