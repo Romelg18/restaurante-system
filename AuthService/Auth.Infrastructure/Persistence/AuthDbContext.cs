@@ -1,0 +1,18 @@
+using Auth.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace Auth.Infrastructure.Persistence
+{
+    public class AuthDbContext : DbContext
+    {
+        public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options) { }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Usuario>().ToTable("Usuarios");
+        }
+    }
+}
